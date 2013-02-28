@@ -3,7 +3,7 @@ PHP-Hooks
 Standalone Hook / Event helper library for PHP
 
 
-Basic usage:
+Basic Usage:
 ------------
 ```php
 Hook::add('my_hook', function($message){
@@ -12,7 +12,7 @@ Hook::add('my_hook', function($message){
 Hook::call('my_hook', 'Hello world');  // echo 'Hello world'
 ```
 
-Removing a single callback from a hook:
+Removing a Single Callback from a Hook:
 ---------------------------------------
 Hook internally creates unique ids for callbacks, so they can be removed
 ```php
@@ -25,7 +25,7 @@ Hook::remove('my_hook', $callback);
 Hook::call('my_hook', 'Hello world'); // does nothing
 ```
 
-Removing all callbacks for a hook:
+Removing all Callbacks for a Hook:
 ----------------------------------
 ```php
 Hook::add('my_hook', function($message){
@@ -35,7 +35,7 @@ Hook::remove('my_hook');
 Hook::call('my_hook', 'Hello world'); // does nothing
 ```
 
-Priority and return false
+Priority and Return False
 ----------------------------------
 ```php
 Hook::add('my_hook', function($message){
@@ -47,8 +47,8 @@ Hook::add('my_hook', function(){
 Hook::call('my_hook', 'Hello world'); // does nothing, because the callback that returned false was executed first
 ```
 
-Get all Hooks
-----------------------------------
+Get Array of Registered Callbacks for a Hook
+--------------------------------------------
 ```php
 Hook::add('my_hook', function($message){
   echo $message;
